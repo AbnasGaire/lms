@@ -1,0 +1,22 @@
+{% extends 'base/master.html' %}
+{% block 'title' %}
+Manager Dashboard
+{% endblock %}
+
+{% block 'body' %}
+{% if messages %}
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+{% endif %}
+</br>
+    <div class="box">
+        <a href="{% url 'addteacher' %}" class="btn btn-success" >Add Teacher</a>
+    </div>
+
+    <div class="box">
+        <a href="{% url 'viewteacher' %}" class="btn btn-primary">View Teacher</a>
+    </div>
+
+<h1>This is manager dashboard</h1>
+{% endblock %}

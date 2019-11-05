@@ -1,0 +1,29 @@
+
+{% extends 'base/master.html' %}
+
+{% block 'title' %}
+Insert Data
+{% endblock %}
+
+{% block 'body' %}
+{% for message in messages %}
+{{message}}
+ {% endfor %}
+<form method="post">
+    <div class="block" style="margin-left:400px;">
+        <div class="row" >
+            <div class="col-4">
+
+                {{form}}
+                {% csrf_token %}
+                <br/>
+                <button class="btn btn-success">Save</button>
+
+            </div>
+
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

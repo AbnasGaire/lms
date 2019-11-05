@@ -1,0 +1,29 @@
+{% extends 'base/master.html' %}
+{% block 'title' %}
+LMS-login
+{% endblock %}
+
+{% block 'body' %}
+<form method="post">
+    <div class="row">
+        <div class="col-md-4 ">
+             <div class="box" style="margin-left:400px;">
+                 {% if messages %}
+                    {% for message in messages %}
+                      <h6 style="color:red;">{{message}}</h6>
+                    {% endfor %}
+                 {% endif %}
+                <label>Username</label>
+                <input type="text" name="uname" class="form-control">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control">
+                 <br/>
+                 <button class="btn btn-primary">Login</button>
+                 {% csrf_token %}
+             </div>
+        </div>
+
+    </div>
+
+</form>
+{% endblock %}

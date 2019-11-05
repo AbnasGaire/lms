@@ -1,0 +1,31 @@
+{% extends 'base/master.html' %}
+{% block 'title' %}
+Manager Dashboard
+{% endblock %}
+
+{% block 'body' %}
+
+
+<h1>Who are you?</h1>
+<div class="box" >
+
+            <table class="table" style="align:center;">
+                <th>Name</th>
+                <th>Action</th>
+                {% for t in teacher %}
+                <tr>
+                    <td>{{t.fullname}}</td>
+                    {% if t.is_suspend == False %}
+                    <td><a href="{% url 'suspendteacher' t.id %}" class="btn btn-primary">Suspend</a></td>
+                    {% else %}
+                    <td><a href="{% url 'continueteacher' t.id %}" class="btn btn-primary">Continue</a></td>
+                    {% endif %}
+                    <td><a href="#" class="btn btn-primary">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+
+</div>
+
+
+{% endblock %}

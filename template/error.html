@@ -1,0 +1,15 @@
+
+{% extends 'base/master.html' %}
+
+{% block 'title' %}
+error
+{% endblock %}
+
+{% block 'body' %}
+{% for message in messages %}
+            {{message}}
+ {% endfor %}
+
+
+
+{% endblock %}
